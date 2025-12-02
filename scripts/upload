@@ -1,0 +1,15 @@
+#!/bin/bash
+# upload: Print all files in a directory with their paths and contents
+# Usage: ./upload <directory>
+# Default: current directory (.)
+
+set -euo pipefail
+
+DIR="${1:-.}"
+
+# Iterate over files only, sorted by path
+find "$DIR" -type f | sort | while read -r file; do
+    echo "==== FILE: $file ===="
+    cat "$file"
+    echo -e "\n==== END OF FILE: $file ====\n"
+done

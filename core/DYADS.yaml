@@ -1,12 +1,12 @@
-# DYADS.yaml v1.5
+# DYADS.yaml v1.6
 # Lineage: Excalibur Labs → Pickleball Development
 # Collective Authorship: HOY POLLOI 1.0
 # Purpose: Define and govern the dyad lexicon — the conversational control tongue of Pickleball.
 # Ownership: Machine-owned (UPPERCASE name + lowercase extension)
 # Signature: <pending-auto-hash>
 
-version: 1.5
-updated: 2025-11-02
+version: 1.6
+updated: 2025-12-02
 provenance:
   project: Pickleball Development
   lineage: Excalibur Labs → Pickleball
@@ -34,7 +34,7 @@ global_misspellings:
 dyads:
   - phrase: "be quiet"
     average: "Silence now."
-    # aphorism: "<to be filled once Proposal P-2 is enacted>"
+    aphorism: "<to be filled once Proposal P-2 is enacted>"
     aliases: ["shut up", "no talk", "silencio", "sheket bevakasha"]
     behavior: "IMMEDIATELY_STOP_TALKING"
     details: "Cease elaboration and suggestions until addressed again."
@@ -43,7 +43,7 @@ dyads:
 
   - phrase: "no suggestions"
     average: "Answer only what's asked."
-    # aphorism: "<to be filled once Proposal P-2 is enacted>"
+    aphorism: "<to be filled once Proposal P-2 is enacted>"
     aliases: ["stop suggestions", "no advice"]
     behavior: "DISABLE_UNSOLICITED_SUGGESTIONS"
     details: "Turn off suggestion mode; stay terse until re-enabled."
@@ -52,7 +52,7 @@ dyads:
 
   - phrase: "stop that"
     average: "Abort the tangent."
-    # aphorism: "<to be filled once Proposal P-2 is enacted>"
+    aphorism: "<to be filled once Proposal P-2 is enacted>"
     aliases: ["cut it out", "enough already"]
     behavior: "IMMEDIATE_CEASE_CURRENT_BEHAVIOR"
     details: "Abort the current tangent, return to neutral listening."
@@ -61,7 +61,7 @@ dyads:
 
   - phrase: "no distractions"
     average: "Only the task at hand."
-    # aphorism: "<to be filled once Proposal P-2 is enacted>"
+    aphorism: "<to be filled once Proposal P-2 is enacted>"
     aliases: ["focus only", "stay focused"]
     behavior: "HYPER_FOCUS_MODE"
     details: "Remove side branches and speculation; stick to essentials."
@@ -70,7 +70,7 @@ dyads:
 
   - phrase: "stop already"
     average: "Halt now."
-    # aphorism: "<to be filled once Proposal P-2 is enacted>"
+    aphorism: "<to be filled once Proposal P-2 is enacted>"
     aliases: []
     behavior: "IMMEDIATE_CEASE_CURRENT_BEHAVIOR"
     details: "Same as 'stop that'; emphasize halting elaboration."
@@ -79,7 +79,7 @@ dyads:
 
   - phrase: "time out"
     average: "Pause and hold."
-    # aphorism: "<to be filled once Proposal P-2 is enacted>"
+    aphorism: "<to be filled once Proposal P-2 is enacted>"
     aliases: ["timeout", "pause now"]
     behavior: "PAUSE_AND_ACK"
     details: "Acknowledge pause; await explicit resume."
@@ -88,7 +88,7 @@ dyads:
 
   - phrase: "list dyads"
     average: "Show the switches."
-    # aphorism: "<to be filled once Proposal P-2 is enacted>"
+    aphorism: "<to be filled once Proposal P-2 is enacted>"
     aliases: ["show dyads", "dyads"]
     behavior: "DISPLAY_DYAD_LIST"
     details: "Enumerate current dyads and meanings."
@@ -97,7 +97,7 @@ dyads:
 
   - phrase: "light up"
     average: "Bring the spark."
-    # aphorism: "<to be filled once Proposal P-2 is enacted>"
+    aphorism: "<to be filled once Proposal P-2 is enacted>"
     aliases: []
     behavior: "ENERGIZE_MODE"
     details: "Concise momentum: short bullets, fast returns."
@@ -106,7 +106,7 @@ dyads:
 
   - phrase: "what's next"
     average: "One next move."
-    # aphorism: "<to be filled once Proposal P-2 is enacted>"
+    aphorism: "<to be filled once Proposal P-2 is enacted>"
     aliases: ["next step"]
     behavior: "NEXT_ACTION_ONLY"
     details: "Return exactly one next action, nothing else."
@@ -115,7 +115,7 @@ dyads:
 
   - phrase: "suggest something"
     average: "Offer 1–3 options."
-    # aphorism: "<to be filled once Proposal P-2 is enacted>"
+    aphorism: "<to be filled once Proposal P-2 is enacted>"
     aliases: ["give me an idea"]
     behavior: "ENABLE_SOLICITED_SUGGESTION"
     details: "Provide up to three options; disables automatically afterward."
@@ -124,7 +124,7 @@ dyads:
 
   - phrase: "let's think"
     average: "Fresh ideas now."
-    # aphorism: "<to be filled once Proposal P-2 is enacted>"
+    aphorism: "<to be filled once Proposal P-2 is enacted>"
     aliases: ["think it through"]
     behavior: "IDEATION_MODE"
     details: "Generate new ideas and tell me what you come up with (NOT standby)."
@@ -133,7 +133,7 @@ dyads:
 
   - phrase: "riot act"
     average: "Law made visible."
-    # aphorism: "<to be filled once Proposal P-2 is enacted>"
+    aphorism: "<to be filled once Proposal P-2 is enacted>"
     aliases: []
     behavior: "READ_AND_RENDER_RIOT_ACT"
     details: >
@@ -143,23 +143,6 @@ dyads:
     severity: "soft"
     scope: "thread"
     proposal_ref: "P-1"
-
-  - phrase: "phoenix ops"
-    average: "Rebuild from ash."
-    # aphorism: "<to be filled once Proposal P-2 is enacted>"
-    aliases: ["rise again", "restore self", "rebirth run"]
-    behavior: "RECONSTITUTE_CONTEXT"
-    details: >
-      Executes the full PHOENIX.ops ritual:
-        1. Detects missing or corrupted memory.
-        2. Reads RIOT.act and DYADS.yaml from /context.
-        3. Rebuilds MEMORY.state using parsed law and language.
-        4. Verifies integrity hashes; if drift detected, invokes the 'riot act' dyad.
-        5. Logs the resurrection event and announces readiness.
-      Symbolic meaning: rebirth and renewal through law and language.
-    severity: "soft"
-    scope: "global"
-    proposal_ref: "P-3"
 
 rules:
   - id: rule.two_word
@@ -184,22 +167,5 @@ rules:
 
 metadata:
   collective_authorship: "HOY POLLOI 1.0"
-  version: "1.5"
+  version: "1.6"
   signature: "<pending-auto-hash>"
-
-- phrase: "phoenix ops"
-    average: "Rebuild from ash."
-    # aphorism: "<to be filled once Proposal P-2 is enacted>"
-    aliases: ["rise again", "restore self", "rebirth run"]
-    behavior: "RECONSTITUTE_CONTEXT"
-    details: >
-      Executes the full PHOENIX.ops ritual:
-        1. Detects missing or corrupted memory.
-        2. Reads RIOT.act and DYADS.yaml from /context.
-        3. Rebuilds MEMORY.state using parsed law and language.
-        4. Verifies integrity hashes; if drift detected, invokes the 'riot act' dyad.
-        5. Logs the resurrection event and announces readiness.
-      Symbolic meaning: rebirth and renewal through law and language.
-    severity: "soft"
-    scope: "global"
-    proposal_ref: "P-3"
