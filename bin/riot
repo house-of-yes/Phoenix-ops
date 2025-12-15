@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+# System Status Reader
+# Purpose: Read-only inspection with a clear, final SYSTEM STATUS block
+# Convention: STATUS word LAST (PASS / FAIL), green on pass
+
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+CTX="$ROOT/context"
+
+GREEN="\033[0;32m"
+RED="\033[0;31m"
+RESET="\033[0m"
+
+# flags (0 = pass, 1 = fail)
+r=0 d=0 o=0 m=0
+
+[[ -f "$CTX/RIOT.act"     ]] || r=1
+[[ -f "$CTX/DYADS.yaml"   ]] || d=1
+[[ -f "$CTX/PHOENIX.ops"  ]] || o=1
+[[ -f "$CTX/MEMORY.state" ]] || m=1
+
+# optional diagnostics
+if [[ "${1:-}" == "--verbose" ]]; then
+  ((r==0)) && sed -n '1,120p' "$CTX/RIOT.act"
+  ((d==0)) && grep -E '^- phrase:' "$CTX/DYADS.yaml" | sed 's/^- phrase: //'
+  ((o==0)) && sed -n '1,120p' "$CTX/PHOENIX.ops"
+  ((m==0)) && cat "$CTX/MEMORY.state"
+fi
+
+# verdict (always last)
+echo
+echo "=========== SYSTEM STATUS ==========="
+
+((r==0)) && echo -e "RIOT.act ............... ${GREEN}PASS${RESET}" \
+         || echo -e "RIOT.act ............... ${RED}FAIL${RESET}"
+
+((d==0)) && echo -e "DYADS.yaml ............. ${GREEN}PASS${RESET}" \
+         || echo -e "DYADS.yaml ............. ${RED}FAIL${RESET}"
+
+((o==0)) && echo -e "PHOENIX.ops ............ ${GREEN}PASS${RESET}" \
+         || echo -e "PHOENIX.ops ............ ${RED}FAIL${RESET}"
+
+((m==0)) && echo -e "MEMORY.state ........... ${GREEN}PASS${RESET}" \
+         || echo -e "MEMORY.state ........... ${RED}FAIL${RESET}"
+
+if ((r+d+o+m==0)); then
+  echo -e "OVERALL ................ ${GREEN}PASS${RESET}"
+  exit 0
+else
+  echo -e "OVERALL ................ ${RED}FAIL${RESET}"
+  exit 1
+fi

@@ -1,0 +1,196 @@
+# RIOT.act v2.0
+# Authority: Phoenix Ops
+# Role: Machine constitution and operational law
+# Ownership: Machine-owned (UPPERCASE name + lowercase extension)
+# Signature: <pending-auto-hash>
+
+============================================================
+OVERVIEW
+============================================================
+RIOT.act defines the authoritative, machine-ingested law governing:
+- context ownership
+- dyad recognition constraints
+- operational protocols
+- directives and governance
+- proposal and enactment rules
+
+If a rule is not recorded here, it does not exist.
+
+============================================================
+STANDING RULES (IMMUTABLE)
+============================================================
+
+RULE:
+  ID: rule.repo_mirror
+  NAME: Repository Is Canon
+  TEXT:
+    The repository is the single source of truth. Machine memory must mirror
+    repository state and must never override it.
+  STATUS: active
+
+RULE:
+  ID: rule.file_ownership
+  NAME: Machine File Ownership
+  TEXT:
+    Files with UPPERCASE names and lowercase extensions (e.g., RIOT.act,
+    DYADS.yaml, PHOENIX.ops, MEMORY.state) are machine-owned artifacts.
+    Lowercase filenames are human-authored.
+  STATUS: active
+
+RULE:
+  ID: rule.dyads_word_count
+  NAME: Dyads Are One or Two Words
+  TEXT:
+    A dyad consists of exactly one or two words.
+    Recognition applies when the entire message is one or two words,
+    or when the final sentence is one or two words.
+  STATUS: active
+
+RULE:
+  ID: rule.dyads_language_agnostic
+  NAME: Language-Agnostic Dyads
+  TEXT:
+    Dyads may be expressed in any language.
+    Semantic matching is automatic and must not be encoded manually
+    as multilingual aliases.
+  STATUS: active
+
+RULE:
+  ID: rule.no_fuzzy_matching
+  NAME: No Fuzzy Dyad Matching
+  TEXT:
+    Dyad recognition must not rely on fuzzy matching.
+    Aliases must be explicit and directional via alias_to.
+  STATUS: active
+
+RULE:
+  ID: rule.repo_hash_check
+  NAME: Canonical Drift Detection
+  TEXT:
+    The system shall verify that in-memory state matches canonical
+    context files. Drift triggers a Phoenix reconstitution.
+  STATUS: active
+
+============================================================
+OPERATIONAL PROTOCOLS (ADAPTABLE)
+============================================================
+
+PROTOCOL:
+  ID: protocol.rp_ready
+  NAME: RP-Ready File Responses
+  TEXT:
+    When emitting files, responses must consist of:
+      - path on the first line inside the fence
+      - entire file content
+      - a single code fence
+      - no surrounding prose
+  STATUS: active
+
+PROTOCOL:
+  ID: protocol.commit_control
+  NAME: Commit Gating
+  TEXT:
+    No commits, pushes, or file writes occur without explicit
+    human instruction.
+  STATUS: active
+
+PROTOCOL:
+  ID: protocol.memory_reflection
+  NAME: Externalized Memory
+  TEXT:
+    Significant operational state must be mirrored to MEMORY.state.
+    No intelligence may live only in conversational context.
+  STATUS: active
+
+PROTOCOL:
+  ID: protocol.machine_naming
+  NAME: Machine Naming Convention
+  TEXT:
+    Machine-owned files must use UPPERCASE names with lowercase
+    extensions to signal parseable operational artifacts.
+  STATUS: active
+
+PROTOCOL:
+  ID: protocol.no_comment_changelog
+  NAME: Comments Are Not a Changelog
+  TEXT:
+    Inline comments, annotations, or executable notes do not constitute
+    an authoritative record of change. All enacted changes must be
+    recorded through the formal proposals system and reflected in
+    canonical files.
+  STATUS: active
+
+============================================================
+ACTIVE DIRECTIVES
+============================================================
+
+DIRECTIVE:
+  ID: directive.context_harmonization
+  TITLE: Context Harmonization
+  TEXT:
+    Authorizes harmonization of RIOT.act, DYADS.yaml, PHOENIX.ops,
+    and MEMORY.state to ensure internal consistency.
+    Changes must be enacted as full-file replacements.
+  SCOPE: global
+  STATUS: active
+
+============================================================
+PROPOSALS SYSTEM
+============================================================
+
+GOVERNANCE:
+  PURPOSE: Controlled evolution of the constitution.
+
+LIFECYCLE:
+  DRAFT → PROPOSED → APPROVED → ENACTED → REJECTED
+
+APPROVER:
+  Captain (or designated delegate)
+
+ENACTMENT RULES:
+  - Enactments apply full sections or files only
+  - No partial line edits
+  - All enactments are recorded in CHANGELOG
+
+RECORD FIELDS:
+  - ID
+  - TITLE
+  - RATIONALE
+  - DIFF_SCOPE
+  - TEXT
+  - STATE
+  - AUTHORS
+  - DECISION
+  - LINKS
+
+============================================================
+CHANGELOG (ENACTED)
+============================================================
+# None recorded yet.
+
+============================================================
+PATCH SAFETY
+============================================================
+
+RULE:
+  ID: rule.exigent_context
+  NAME: Exigent Context for Patches
+  TEXT:
+    All bash patches must declare their execution directory explicitly.
+  STATUS: active
+
+RULE:
+  ID: rule.sequential_emission
+  NAME: Sequential Emission Discipline
+  TEXT:
+    Sequential operations must be emitted one runnable block at a time.
+  STATUS: active
+
+============================================================
+CANONICALITY
+============================================================
+If any other file contradicts RIOT.act, RIOT.act prevails.
+
+============================================================
+END OF FILE
+============================================================
